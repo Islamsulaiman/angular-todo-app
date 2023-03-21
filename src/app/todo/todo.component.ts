@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Todo } from './todoType';
 
 @Component({
@@ -8,7 +8,10 @@ import { Todo } from './todoType';
 })
 
 
-export class TodoComponent {
+export class TodoComponent implements OnInit {
+  ngOnInit(): void {
+    console.log("inside Tod ")
+  }
 
   todos: Todo[] = [
 

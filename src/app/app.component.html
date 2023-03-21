@@ -1,2 +1,2 @@
-<app-todo></app-todo>
-<router-outlet></router-outlet>
+<app-todo *ngIf="isLogged"></app-todo>
+<router-outlet  *ngIf="!isLogged"></router-outlet>
