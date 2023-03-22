@@ -38,5 +38,4 @@ export class LoginComponent {
     this._loginService.clgValues();
   }
   
-
 }

@@ -1,2 +1,4 @@
+<app-navbar *ngIf="isLogged"></app-navbar>
 <app-todo *ngIf="isLogged"></app-todo>
 <router-outlet  *ngIf="!isLogged"></router-outlet>
+

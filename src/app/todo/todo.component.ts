@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { LoginService } from '../services/login.service';
 import { Todo } from './todoType';
 
 @Component({
@@ -13,9 +15,19 @@ export class TodoComponent implements OnInit {
     console.log("inside Tod ")
   }
 
-  todos: Todo[] = [
+  todos: Todo[] = []
 
-  ]
+  // startper:number = 50
+
+  // //create observable to check for created todo's
+  // private percentageSource = new BehaviorSubject(this.startper);
+  // percentage = this.percentageSource.asObservable();
+
+  constructor(private observable:LoginService){
+
+  }
+
+
   // todo name
   newTodo: string | undefined;
 
@@ -26,6 +38,8 @@ export class TodoComponent implements OnInit {
       todo.completed = false;
       this.todos.push(todo);
       this.newTodo = "";
+
+      this.observable.pushObservable();      
 
     }else{
       alert("please enter a todo")
