@@ -1,4 +1,5 @@
-<app-navbar *ngIf="isLogged"></app-navbar>
-<app-todo *ngIf="isLogged"></app-todo>
-<router-outlet  *ngIf="!isLogged"></router-outlet>
+<app-navbar *ngIf="isLoggedIn"></app-navbar>
+<app-todo *ngIf="isLoggedIn"></app-todo>
+<router-outlet  *ngIf="!isLoggedIn"></router-outlet>
+<!-- footer component -->
 

@@ -5,7 +5,8 @@ import { LoginAuthGuard } from './guards/login-auth.guard';
 
 
 const routes: Routes = [
-  {path: 'login',component:LoginComponent, canActivate:[LoginAuthGuard] }
+  {path: 'login',component:LoginComponent, canActivate:[LoginAuthGuard]},
+  {path: '', component : LoginComponent, canActivate: [LoginAuthGuard]}
 
 ];
 
@@ -13,4 +14,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

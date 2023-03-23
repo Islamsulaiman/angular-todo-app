@@ -1,20 +1,33 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class LoginAuthGuard implements CanActivate {
-  isLogged: boolean = true;
+  isLogged: boolean = false;
   
-  constructor(private _router: Router){
+  constructor(private _router: Router){}
 
+
+  //create observable to check for created todo's
+  private loggedInSource = new BehaviorSubject(this.isLogged);
+  loggedIn = this.loggedInSource.asObservable();
+
+  loggedInSwitch(){
+    this.isLogged = true;
+    console.log(this.isLogged)
+    this.loggedInSource.next(this.isLogged)
+  }
+
+  areWeLoggedIn(){
+    return this.isLogged
   }
 
   youAreLoggedIn(){
-    alert("you are logged in, go to main page")
+    alert("you are logged in, redirecting to main page")
     this._router.navigate(['/'])
   }
 
@@ -23,6 +36,4 @@ export class LoginAuthGuard implements CanActivate {
     state: RouterStateSnapshot):any| Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return this.isLogged ? this.youAreLoggedIn() : true;
   }
-  
-
 }
