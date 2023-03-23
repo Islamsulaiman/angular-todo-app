@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { from } from 'rxjs';
 import { AppComponent } from '../app.component';
 import { LoginAuthGuard } from '../guards/login-auth.guard';
 import { LoginService } from '../services/login.service';
 
 
 type user = {
-  name:string,
-  email: string,
-  password: string
+  name:string|undefined,
+  email: string|undefined,
+  password: string|undefined
   
 }
 
@@ -24,8 +25,8 @@ export class LoginComponent {
   constructor(private _loginService:LoginService, private _router: Router, private loginGuard:LoginAuthGuard, private logginSwitch: AppComponent){}
 
   loginForm= new FormGroup({
-    email :new FormControl(''),
-    password :new FormControl(''),
+    email :new FormControl('', Validators.required),
+    password :new FormControl('', Validators.required),
 
   })
 
@@ -34,9 +35,15 @@ export class LoginComponent {
     this._loginService.password =  this.loginForm.value.password;
     this._loginService.clgValues();
 
-    this.logginSwitch.loggedIn()
+    if(!this.loginForm.value.email || ! this.loginForm.value.password){
+      alert('Please enter the form data')
+    }else{
+      this.logginSwitch.loggedIn()
 
-    this._router.navigate(['/'])
+      this._router.navigate(['/'])
+    }
+
+
 
   }
 }

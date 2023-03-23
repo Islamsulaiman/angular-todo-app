@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 
+type userType ={
+  email: string|undefined|null,
+  password: string|undefined|null
+}
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -8,15 +13,23 @@ import { LoginService } from '../services/login.service';
 })
 
 export class NavbarComponent implements OnInit {
-  name:any;
 
-  percentage: any=0
+
+
 
 constructor(private _service: LoginService){}
 
+userEmail: any = this._service.email
+
+
 
   ngOnInit(): void {
-    this.percentage = this._service.percentage.subscribe(newPer => this.percentage = newPer)
+
+    this._service.pushUserData()
+
+    // this.userEmail =  this._service.userData.subscribe(userEmail => this.userEmail = JSON.stringify (userEmail)) 
+    console.log(this.userEmail)
   }
+
 
 }

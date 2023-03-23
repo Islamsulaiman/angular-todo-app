@@ -17,12 +17,6 @@ export class TodoComponent implements OnInit {
 
   todos: Todo[] = []
 
-  // startper:number = 50
-
-  // //create observable to check for created todo's
-  // private percentageSource = new BehaviorSubject(this.startper);
-  // percentage = this.percentageSource.asObservable();
-
   constructor(private observable:LoginService){
 
   }
@@ -39,7 +33,7 @@ export class TodoComponent implements OnInit {
       this.todos.push(todo);
       this.newTodo = "";
 
-      this.observable.pushObservable();      
+      // this.observable.pushObservable();      
 
     }else{
       alert("please enter a todo")
