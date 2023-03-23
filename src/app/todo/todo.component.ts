@@ -11,11 +11,22 @@ import { Todo } from './todoType';
 
 
 export class TodoComponent implements OnInit {
+
+  inOrNot : Todo | undefined  ;
+
   ngOnInit(): void {
     console.log("inside Tod ")
   }
 
   todos: Todo[] = []
+
+  todosFav : Todo[] = []
+
+  todosDeleted : Todo [] = []
+
+  todosCompleted : Todo[] = []
+
+  
 
   constructor(private observable:LoginService){
 
@@ -30,6 +41,8 @@ export class TodoComponent implements OnInit {
       let todo = new Todo();
       todo.title = this.newTodo;
       todo.completed = false;
+      todo.favorite = false;
+      todo.deleted = false
       this.todos.push(todo);
       this.newTodo = "";
 
@@ -40,12 +53,44 @@ export class TodoComponent implements OnInit {
     }
   }
 
+  addTodoToFav(id:number){
+
+    // this.inOrNot  = this.todos.fin(todo => todo.title === this.todos[id].title)
+
+    if(!this.todos[id].favorite ){
+
+      this.todosFav.push(this.todos[id])
+      this.todos[id].favorite = true
+    }
+    console.log(this.todosFav);
+  }
+
+  addToDeleted(id:number){
+    if(!this.todos[id].deleted ){
+
+      this.todosDeleted.push(this.todos[id])
+      this.todos[id].deleted = true
+    }
+    console.log(this.todosDeleted);
+  }
+
+  // addToCompleted(id:number){
+  //   if(!this.todos[id].completed ){
+
+  //     this.todosCompleted.push(this.todos[id])
+  //     this.todos[id].completed = true
+  //   }
+  //   console.log(this.todosDeleted);
+  // }
 
   fineshed(id:number){
+    
     this.todos[id].completed = !this.todos[id].completed
+    // this.addToCompleted(id)
   }
 
   remove(id:number){
+    this.addToDeleted(id)
     this.todos.splice(id,1)
   }
 

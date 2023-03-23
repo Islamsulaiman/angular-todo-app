@@ -21,7 +21,7 @@
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">{{userEmail}}</a>
+            <a class="nav-link" href="#">Hello {{userEmail}}</a>
           </li>
 
         </ul>
@@ -73,22 +73,24 @@
           alt="Black and White Portrait of a Man"
           loading="lazy"
         />
-          <ul
-            class="dropdown-menu dropdown-menu-end"
-            aria-labelledby="navbarDropdownMenuAvatar"
-          >
-            <li>
-              <a class="dropdown-item" href="#">My profile</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Settings</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Logout</a>
-            </li>
-          </ul>
+
+
+          <!-- <div class="dropdown">  -->
+            <button class="btn btn-primary dropdown-toggle m-2" id="dropdownMenuButton1" type="button" data-bs-toggle="dropdown">Dropdown
+            <span class="caret"></span> </button> 
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li  (click)="reloadPage()"><a href="#">Log Out</a></li>
+
+            </ul>
+           <!-- </div>  -->
+
+
+
         </div>
+
       </div>
+
+
       <!-- Right elements -->
     </div>
     <!-- Container wrapper -->

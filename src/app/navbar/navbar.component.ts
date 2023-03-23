@@ -31,5 +31,9 @@ userEmail: any = this._service.email
     console.log(this.userEmail)
   }
 
+  reloadPage(){
+    window.location.reload()
+  }
+
 
 }
