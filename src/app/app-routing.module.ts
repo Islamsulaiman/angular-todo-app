@@ -3,12 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { LoginAuthGuard } from './guards/login-auth.guard';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DeletedComponent } from './deleted/deleted.component';
 
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent, canActivate:[LoginAuthGuard]},
   {path: '', component : LoginComponent, canActivate: [LoginAuthGuard]},
+  {path: 'deleted',  component:  DeletedComponent},
+
+
   {path: '**',  component:  NotFoundComponent},
+  
 
 ];
 

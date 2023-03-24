@@ -19,19 +19,24 @@ export class TodoComponent implements OnInit {
   }
 
   todos: Todo[] = []
+  todoCount: number = 0
 
   todosFav : Todo[] = []
+  favTodoCount: number = 0
 
   todosDeleted : Todo [] = []
+  deletedTodoCount: number = 0
 
   todosCompleted : Todo[] = []
+  completedTodoCount: number = 0
 
   
 
-  constructor(private observable:LoginService){
+  constructor(private observable:LoginService){}
 
-  }
 
+
+  // main functions
 
   // todo name
   newTodo: string | undefined;
@@ -46,12 +51,16 @@ export class TodoComponent implements OnInit {
       this.todos.push(todo);
       this.newTodo = "";
 
+      this.todoCountFunc()
+
       // this.observable.pushObservable();      
 
     }else{
       alert("please enter a todo")
     }
   }
+
+
 
   addTodoToFav(id:number){
 
@@ -93,6 +102,17 @@ export class TodoComponent implements OnInit {
     this.addToDeleted(id)
     this.todos.splice(id,1)
   }
+
+
+
+
+
+  // utilities
+  todoCountFunc(){
+    this.todoCount = this.todos.length-1
+  }
+
+
 
 }
 

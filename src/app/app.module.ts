@@ -8,6 +8,8 @@ import { TodoComponent } from './todo/todo.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FavoriteComponent } from './favorite/favorite.component';
+import { DeletedComponent } from './deleted/deleted.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     TodoComponent,
     LoginComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FavoriteComponent,
+    DeletedComponent
   ],
   imports: [
     BrowserModule,
