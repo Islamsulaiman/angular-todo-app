@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { LoginService } from '../services/login.service';
+import { TodosService } from '../services/todos.service';
 import { Todo } from './todoType';
 
 @Component({
@@ -18,6 +19,8 @@ export class TodoComponent implements OnInit {
     console.log("inside Tod ")
   }
 
+  nums : number[] = [1,2,3,4]
+
   todos: Todo[] = []
   todoCount: number = 0
 
@@ -32,7 +35,7 @@ export class TodoComponent implements OnInit {
 
   
 
-  constructor(private observable:LoginService){}
+  constructor( private _todoService: TodosService){}
 
 
 
@@ -51,9 +54,9 @@ export class TodoComponent implements OnInit {
       this.todos.push(todo);
       this.newTodo = "";
 
+      this._todoService.onSubmit(todo)
       this.todoCountFunc()
 
-      // this.observable.pushObservable();      
 
     }else{
       alert("please enter a todo")
@@ -70,6 +73,8 @@ export class TodoComponent implements OnInit {
 
       this.todosFav.push(this.todos[id])
       this.todos[id].favorite = true
+
+      // this.service.changeData(this.todos)
     }
     console.log(this.todosFav);
   }
@@ -82,15 +87,6 @@ export class TodoComponent implements OnInit {
     }
     console.log(this.todosDeleted);
   }
-
-  // addToCompleted(id:number){
-  //   if(!this.todos[id].completed ){
-
-  //     this.todosCompleted.push(this.todos[id])
-  //     this.todos[id].completed = true
-  //   }
-  //   console.log(this.todosDeleted);
-  // }
 
   fineshed(id:number){
     
