@@ -33,9 +33,6 @@ export class LoginService {
 
   constructor() { }
 
-  // pushObservable(){
-  //   this.percentageSource.next(this.startper++)
-  // }
   pushUserData(){
     this.userDataSource.next(this.email)
   }
@@ -43,6 +40,6 @@ export class LoginService {
 
 
   clgValues(){
-    console.log(` email = ${this.email} , password = ${this.password}`)
+    // console.log(` email = ${this.email} , password = ${this.password}`)
   }
 }

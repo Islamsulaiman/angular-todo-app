@@ -17,7 +17,7 @@ export class TodoComponent implements OnInit {
   inOrNot : Todo | undefined  ;
 
   ngOnInit(): void {
-    console.log("inside Tod ")
+    // console.log("inside Tod ")
   }
 
   nums : number[] = [1,2,3,4]

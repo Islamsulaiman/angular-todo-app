@@ -62,7 +62,6 @@ currentMessage = this.messageSource.asObservable();
     }
     this.allTodos.push(newTodo);
 
-    console.log(`From service: all todos : ${JSON.stringify(this.allTodos[0].title) }`)
   }
 
   getTodos(){

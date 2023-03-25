@@ -22,28 +22,14 @@ constructor(private _service: LoginService ){}
 
 userEmail: any = this._service.email
 
-// todoCount: number = 0
-// favTodoCount: number = 0
-// completedTodoCount: number = 0
-
-
   ngOnInit(): void {
 
     this._service.pushUserData()
 
-    // this.userEmail =  this._service.userData.subscribe(userEmail => this.userEmail = JSON.stringify (userEmail)) 
-    console.log(this.userEmail)
   }
 
   reloadPage(){
     window.location.reload()
   }
-
-  // // utilties
-  // todoCountFunc(){
-  //   this.todoCount = this.todos.todos.length -1
-  // }
-
-
 
 }

@@ -2,18 +2,7 @@
 <nav class="navbar  navbar-light bg-light">
     <!-- Container wrapper -->
     <div class="container-fluid">
-      <!-- Toggle button
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars"></i>
-      </button> -->
+
   
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -49,34 +38,7 @@
           <i class="fas fa-shopping-cart"></i>
         </a>
   
-        <!-- Notifications -->
-        <div class="dropdown">
-          <a
-            class="text-reset me-3 dropdown-toggle hidden-arrow"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-mdb-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="fas fa-bell"></i>
-            <span class="badge rounded-pill badge-notification bg-danger">1</span>
-          </a>
-          <ul
-            class="dropdown-menu dropdown-menu-end"
-            aria-labelledby="navbarDropdownMenuLink"
-          >
-            <li>
-              <a class="dropdown-item" href="#">Some news</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Another news</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </li>
-          </ul>
-        </div>
+
         <!-- Avatar -->
         <div class="dropdown">
           <img
@@ -89,23 +51,13 @@
 
 
           <!-- <div class="dropdown">  -->
-            <button class="btn btn-primary dropdown-toggle m-2" id="dropdownMenuButton1" type="button" data-bs-toggle="dropdown">Dropdown
+            <button class="btn btn-primary  m-2" id="dropdownMenuButton1" type="button" data-bs-toggle="dropdown" (click)="reloadPage()">Log Out
             <span class="caret"></span> </button> 
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li  (click)="reloadPage()"><a href="#">Log Out</a></li>
-
-            </ul>
-           <!-- </div>  -->
-
-
 
         </div>
 
       </div>
 
-
-      <!-- Right elements -->
     </div>
-    <!-- Container wrapper -->
   </nav>
   <!-- Navbar -->
