@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { HttpService } from '../services/http.service';
 import { LoginService } from '../services/login.service';
 import { TodosService } from '../services/todos.service';
 import { Todo } from './todoType';
@@ -35,9 +36,9 @@ export class TodoComponent implements OnInit {
 
   
 
-  constructor( private _todoService: TodosService){}
+  constructor( private _todoService: TodosService, private _login: LoginService, private _http:HttpService){}
 
-
+  name : String |undefined|null = this._login.email
 
   // main functions
 
@@ -53,6 +54,9 @@ export class TodoComponent implements OnInit {
       todo.deleted = false
       this.todos.push(todo);
       this.newTodo = "";
+
+      console.log("from the http reguest")
+      console.log( this._http.getAllUsers())
 
       this._todoService.onSubmit(todo)
       this.todoCountFunc()
