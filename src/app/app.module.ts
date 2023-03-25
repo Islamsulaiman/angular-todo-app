@@ -11,6 +11,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { DeletedComponent } from './deleted/deleted.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     NotFoundComponent,
     FavoriteComponent,
-    DeletedComponent
+    DeletedComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

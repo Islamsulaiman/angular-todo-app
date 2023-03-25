@@ -19,26 +19,22 @@
 
       <div class="d-flex align-items-center ">
         <div class="me-5">
-          <span>favorit</span>
-          <!-- <span>{{todoCount}}</span> -->
+          <i class="fa fa-star fa-xl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Favorite Todo's"></i>
           
         </div>
         <div class="me-5">
-          deleted
+          
+          <i class="fa fa-trash fa-xl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Deleted Todo's"></i>
         </div>
         <div class="me-5">
-          completed
+          
+          <i class="fa fa-check fa-2xl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Completed Todo's"></i>
         </div>
       </div>
   
       <!-- Right elements -->
       <div class="d-flex align-items-center">
-        <!-- Icon -->
-        <a class="text-reset me-3" href="#">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
   
-
         <!-- Avatar -->
         <div class="dropdown">
           <img
@@ -48,7 +44,6 @@
           alt="Black and White Portrait of a Man"
           loading="lazy"
         />
-
 
           <!-- <div class="dropdown">  -->
             <button class="btn btn-primary  m-2" id="dropdownMenuButton1" type="button" data-bs-toggle="dropdown" (click)="reloadPage()">Log Out
@@ -60,4 +55,3 @@
 
     </div>
   </nav>
-  <!-- Navbar -->
