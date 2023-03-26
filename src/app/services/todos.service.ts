@@ -52,25 +52,25 @@ export class TodosService {
 // currentMessage = this.messageSource.asObservable();
 
 
-  onSubmit(newTodo:Todo){
-    let todo = new Todo();
-    todo.title = newTodo.title
-    todo.completed = newTodo.completed
-    todo.deleted = newTodo.deleted
-    todo.favorite = newTodo.favorite
+  // onSubmit(newTodo:Todo){
+  //   let todo = new Todo();
+  //   todo.title = newTodo.title
+  //   todo.completed = newTodo.completed
+  //   todo.deleted = newTodo.deleted
+  //   todo.favorite = newTodo.favorite
 
-    if(newTodo.completed){
-      this.todosCompleted.push(todo)
+  //   if(newTodo.completed){
+  //     this.todosCompleted.push(todo)
 
-    }else if(newTodo.deleted){
-      this.todosDeleted.push(todo)
-    }
-    else if(newTodo.favorite){
-      this.todosFav.push(todo)
-    }
-    this.allTodos.push(newTodo);
+  //   }else if(newTodo.deleted){
+  //     this.todosDeleted.push(todo)
+  //   }
+  //   else if(newTodo.favorite){
+  //     this.todosFav.push(todo)
+  //   }
+  //   this.allTodos.push(newTodo);
 
-  }
+  // }
 
   getTodos(){
     // return this.allTodos

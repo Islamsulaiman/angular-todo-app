@@ -9,11 +9,24 @@ import { Todo } from '../todo/todoType';
 })
 export class DoneComponent {
 
+  allTodos :Todo[] = []
   completedTodo :Todo[] = []
 
   constructor(private _todoService: TodosService){
-    this.completedTodo = this._todoService.todosCompleted
+
+
+    this.allTodos = this._todoService.allTodos
+
+    for(let i =0; i<this.allTodos.length; i++){
+      if(this.allTodos[i].completed === true){
+        this.completedTodo.push(this.allTodos[i])
+      }
+    }
+
+
     console.log(this.completedTodo)
+
+
   }
 
 }

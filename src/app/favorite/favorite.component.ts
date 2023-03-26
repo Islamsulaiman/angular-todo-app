@@ -24,6 +24,7 @@ export class FavoriteComponent implements OnInit{
         this.favTodos.push(this.allTodos[i])
       }
     }
+    
   }
 
   

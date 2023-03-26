@@ -1,1 +1,26 @@
-<p>done works!</p>
+
+<div class="table-wrapper">
+
+    <div class="row">
+      <div class="col-md-12">
+          <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text text-muted"><span class="h1">Completed Todo's</span> </h2>
+      </div>
+    </div>
+
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th class="h3">#</th>
+            <th class="h3">Todo</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let todo of completedTodo; let i =index">
+            <td ><span class="h6"> {{i+1}}</span></td>
+            <td ><span class="h6"> {{todo.title}}</span></td>
+
+        </tr>
+        <tbody>
+    </table>
+</div>

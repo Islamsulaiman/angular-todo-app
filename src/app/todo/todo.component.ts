@@ -79,31 +79,13 @@ export class TodoComponent implements OnInit {
 
     if(!this.todos[id].favorite ){
 
-      // this.todos[id].favorite = !this.todos[id].favorite  //change its state
-      // this._todoService.todoFavObj[id] = this._todoService.todosFav.length
-
-      // console.log(this._todoService.todoFavObj)
-
-      // this._todoService.todosFav.push(this.todos[id])
-      // console.log("false in fav")
-
-      console.log(`title ${this._todoService.allTodos[id].title}`)
-      console.log(`before ${this._todoService.allTodos[id].favorite}`)
       this.todos[id].favorite = true  //change its state
       this._todoService.allTodos[id].favorite = true
-      console.log(`after ${this._todoService.allTodos[id].favorite}`)
-
-
 
     }else{
 
-
-      console.log(`title ${this._todoService.allTodos[id].title}`)
-      console.log(`before ${this._todoService.allTodos[id].favorite}`)
       this.todos[id].favorite = false  //change its state
       this._todoService.allTodos[id].favorite = false
-      // this._todoService.todosFav.splice(this._todoService.todoFavObj[id] ,1)
-      console.log(`after ${this._todoService.allTodos[id].favorite}`)
 
     }
   }
@@ -124,14 +106,14 @@ export class TodoComponent implements OnInit {
     if(!this.todos[id].completed){
 
       //if todo is not done
-      this.todos[id].completed = !this.todos[id].completed  //change its state   
-      this._todoService.todosCompleted.push(this.todos[id])
+      this.todos[id].completed = true  //change its state   
+      this._todoService.allTodos[id].completed = true
 
     }else{
 
       // if todo id already made done, and we want to bring it back
-      this.todos[id].completed = !this.todos[id].completed  //change its state
-      this._todoService.todosCompleted.splice(id,1)
+      this.todos[id].completed = false  //change its state
+      this._todoService.allTodos[id].completed = false
     }
   }
 
