@@ -17,7 +17,7 @@ export class FavoriteComponent implements OnInit{
   constructor( private _todoService: TodosService){
 
     // this.todos = this._todos.allTodos
-    this.todos = this._todoService.allTodos
+    this.todos = this._todoService.todosFav
 
   }
 
@@ -25,7 +25,7 @@ export class FavoriteComponent implements OnInit{
 
   ngOnInit(): void {
 
-    console.log(this.todos[0].title)
+    // console.log(this.todos[0].title)
     // this.allTodos = this._todos.getTodos()
 
     // this.allTodos = this._todos.allTodos

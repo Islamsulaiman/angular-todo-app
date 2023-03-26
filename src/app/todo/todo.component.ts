@@ -16,13 +16,14 @@ export class TodoComponent implements OnInit {
 
   inOrNot : Todo | undefined  ;
 
-  ngOnInit(): void {
-    // console.log("inside Tod ")
+  constructor( private _todoService: TodosService, private _login: LoginService, private _http:HttpService){
+    // this._todoService.allTodos = this.todos
+    // this.todos = this._todoService.allTodos
   }
 
   nums : number[] = [1,2,3,4]
 
-  todos: Todo[] = []
+  todos: Todo[] = this._todoService.allTodos
   todoCount: number = 0
 
   todosFav : Todo[] = []
@@ -34,11 +35,12 @@ export class TodoComponent implements OnInit {
   todosCompleted : Todo[] = []
   completedTodoCount: number = 0
 
-  
 
-  constructor( private _todoService: TodosService, private _login: LoginService, private _http:HttpService){
-    // this._todoService.allTodos = this.todos
+  ngOnInit(): void {
+    // console.log(this._todoService.allTodos)
+    // this.todos = this._todoService.allTodos
   }
+
 
   name : String |undefined|null = this._login.email
 
@@ -54,10 +56,15 @@ export class TodoComponent implements OnInit {
       todo.completed = false;
       todo.favorite = false;
       todo.deleted = false
-      this.todos.push(todo);
-      this.newTodo = "";
 
-      this._todoService.allTodos = this.todos
+
+      // this.todos.push(todo); //
+
+
+      this.newTodo = "";  //
+
+      // this._todoService.allTodos = this.todos
+      this._todoService.allTodos.push(todo)
 
       console.log("from the http reguest")
       console.log( this._http.getAllUsers())
@@ -79,10 +86,15 @@ export class TodoComponent implements OnInit {
 
     if(!this.todos[id].favorite ){
 
-      this.todosFav.push(this.todos[id])
+
+      // this.todosFav.push(this.todos[id])
       this.todos[id].favorite = true
 
-      // this.service.changeData(this.todos)
+
+
+
+      // this._todoService.todosFav = this.todosFav
+      this._todoService.todosFav.push(this.todos[id])
     }
     console.log(this.todosFav);
   }
@@ -103,10 +115,10 @@ export class TodoComponent implements OnInit {
   }
 
   remove(id:number){
+    if(this.todos[id].favorite) this._todoService.todosFav.splice(id,1) //remove favorite
     this.addToDeleted(id)
     this.todos.splice(id,1)
   }
-
 
 
 
