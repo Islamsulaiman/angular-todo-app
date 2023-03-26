@@ -102,16 +102,32 @@ export class TodoComponent implements OnInit {
   addToDeleted(id:number){
     if(!this.todos[id].deleted ){
 
-      this.todosDeleted.push(this.todos[id])
+      // this.todosDeleted.push(this.todos[id])  //
       this.todos[id].deleted = true
+
+      this._todoService.todosDeleted.push(this.todos[id])
+
     }
-    console.log(this.todosDeleted);
   }
 
   fineshed(id:number){
     
-    this.todos[id].completed = !this.todos[id].completed
-    // this.addToCompleted(id)
+    if(!this.todos[id].completed){
+
+      //if todo is not done
+      this.todos[id].completed = !this.todos[id].completed  //change its state
+      this._todoService.todosCompleted.push(this.todos[id])
+
+    }else{
+
+      // if todo id already made done, and we want to bring it back
+      this.todos[id].completed = !this.todos[id].completed  //change its state
+      this._todoService.todosCompleted.splice(id,1)
+    }
+
+    // this.todos[id].completed = !this.todos[id].completed
+
+    // console.log(this.todos)
   }
 
   remove(id:number){
