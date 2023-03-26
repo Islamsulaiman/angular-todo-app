@@ -18,8 +18,4 @@ export class DeletedComponent implements OnInit{
 
   ngOnInit(): void {
   }
-
-
-
-
 }

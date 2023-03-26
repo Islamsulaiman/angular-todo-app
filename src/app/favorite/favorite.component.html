@@ -1,55 +1,26 @@
-<!-- <body class="hm-gradient"> -->
-    
-    <main>
-        
-        <!--MDB Tables-->
-        <div class="container mt-4">
 
-            <!-- <div class="text-center darken-grey-text mb-4">
-                <h1 class="font-bold mt-4 mb-3 h5">Built with Material Design for Bootstrap 4</h1>
-                <a class="btn btn-danger btn-md" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">Free download<i class="fa fa-download pl-2"></i></a>
-            </div> -->
+<div class="table-wrapper">
 
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text text-muted">Favorits Todo's</h2>
-                        </div>
-                    </div>
-                    <!-- Grid row -->
-                    <!--Table-->
-                    <table class="table table-striped">
-                        <!--Table head-->
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Todo</th>
-                            </tr>
-                        </thead>
-                        <!--Table head-->
-                        <!--Table body-->
-                        <tbody>
-                            <tr *ngFor="let todo of todos; let i =index">
-                                <th scope="row">{{i+1}}</th>
-                                <td>{{todo.title}}</td>
-                            </tr>
+    <div class="row">
+      <div class="col-md-12">
+          <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text text-muted"><span class="h1">Favorite Todo's</span> </h2>
+      </div>
+    </div>
 
-                        </tbody>
-                        <!--Table body-->
-                    </table>
-                    <!--Table-->
-                </div>
-            </div>
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th class="h3">#</th>
+            <th class="h3">Todo</th>
 
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let todo of todos; let i =index">
+            <td ><span class="h6"> {{i+1}}</span></td>
+            <td ><span class="h6"> {{todo.title}}</span></td>
 
-
-
-
-
-        </div>
-        <!--MDB Tables-->
-      
-    </main>
-  
-<!-- </body> -->
+        </tr>
+        <tbody>
+    </table>
+</div>

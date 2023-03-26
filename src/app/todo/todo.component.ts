@@ -86,17 +86,21 @@ export class TodoComponent implements OnInit {
 
     if(!this.todos[id].favorite ){
 
+      this.todos[id].favorite = !this.todos[id].favorite  //change its state
+      this._todoService.todoFavObj[id] = this._todoService.todosFav.length
 
-      // this.todosFav.push(this.todos[id])
-      this.todos[id].favorite = true
+      console.log(this._todoService.todoFavObj)
 
-
-
-
-      // this._todoService.todosFav = this.todosFav
       this._todoService.todosFav.push(this.todos[id])
+      console.log("false in fav")
+
+    }else{
+
+      this.todos[id].favorite = !this.todos[id].favorite  //change its state
+      this._todoService.todosFav.splice(this._todoService.todoFavObj[id] ,1)
+      console.log("true in fav")
+
     }
-    console.log(this.todosFav);
   }
 
   addToDeleted(id:number){
@@ -115,7 +119,7 @@ export class TodoComponent implements OnInit {
     if(!this.todos[id].completed){
 
       //if todo is not done
-      this.todos[id].completed = !this.todos[id].completed  //change its state
+      this.todos[id].completed = !this.todos[id].completed  //change its state   
       this._todoService.todosCompleted.push(this.todos[id])
 
     }else{
@@ -124,10 +128,6 @@ export class TodoComponent implements OnInit {
       this.todos[id].completed = !this.todos[id].completed  //change its state
       this._todoService.todosCompleted.splice(id,1)
     }
-
-    // this.todos[id].completed = !this.todos[id].completed
-
-    // console.log(this.todos)
   }
 
   remove(id:number){
