@@ -9,6 +9,11 @@ export class TodosService {
 
   allTodos: Todo []=[];
 
+
+
+
+
+
   todosFav : Todo[] = []
   todoFavObj : any = {} //to link between todo id in todo comp and id in fav comp {"todoComp:FavComp"}
   favTodoCount: number = 0
@@ -23,28 +28,28 @@ export class TodosService {
   constructor() {}
 
 
-oneTodo: Todo[] =[{
-  id: 1,
-  title: "hello",
-  completed: true,
-  deleted: false,
-  favorite: true,
-  userId: 11111
-}]
+// oneTodo: Todo[] =[{
+//   id: 1,
+//   title: "hello",
+//   completed: true,
+//   deleted: false,
+//   favorite: true,
+//   userId: 11111
+// }]
 
-aTodo : Todo = {
-  id: 1,
-  title: "hello",
-  completed: true,
-  deleted: false,
-  favorite: true,
-  userId: 11111
-}
+// aTodo : Todo = {
+//   id: 1,
+//   title: "hello",
+//   completed: true,
+//   deleted: false,
+//   favorite: true,
+//   userId: 11111
+// }
 
 
 
-private messageSource = new BehaviorSubject(this.aTodo);
-currentMessage = this.messageSource.asObservable();
+// private messageSource = new BehaviorSubject(this.aTodo);
+// currentMessage = this.messageSource.asObservable();
 
 
   onSubmit(newTodo:Todo){
@@ -69,7 +74,7 @@ currentMessage = this.messageSource.asObservable();
 
   getTodos(){
     // return this.allTodos
-    this.messageSource.next(this.aTodo)
+    // this.messageSource.next(this.aTodo)
   }
 
 

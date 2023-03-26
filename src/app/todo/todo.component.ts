@@ -58,20 +58,15 @@ export class TodoComponent implements OnInit {
       todo.deleted = false
 
 
-      // this.todos.push(todo); //
-
 
       this.newTodo = "";  //
 
-      // this._todoService.allTodos = this.todos
       this._todoService.allTodos.push(todo)
 
       console.log("from the http reguest")
       console.log( this._http.getAllUsers())
 
-      // this._todoService.onSubmit(todo)
       this.todoCountFunc()
-
 
     }else{
       alert("please enter a todo")
@@ -82,23 +77,33 @@ export class TodoComponent implements OnInit {
 
   addTodoToFav(id:number){
 
-    // this.inOrNot  = this.todos.fin(todo => todo.title === this.todos[id].title)
-
     if(!this.todos[id].favorite ){
 
-      this.todos[id].favorite = !this.todos[id].favorite  //change its state
-      this._todoService.todoFavObj[id] = this._todoService.todosFav.length
+      // this.todos[id].favorite = !this.todos[id].favorite  //change its state
+      // this._todoService.todoFavObj[id] = this._todoService.todosFav.length
 
-      console.log(this._todoService.todoFavObj)
+      // console.log(this._todoService.todoFavObj)
 
-      this._todoService.todosFav.push(this.todos[id])
-      console.log("false in fav")
+      // this._todoService.todosFav.push(this.todos[id])
+      // console.log("false in fav")
+
+      console.log(`title ${this._todoService.allTodos[id].title}`)
+      console.log(`before ${this._todoService.allTodos[id].favorite}`)
+      this.todos[id].favorite = true  //change its state
+      this._todoService.allTodos[id].favorite = true
+      console.log(`after ${this._todoService.allTodos[id].favorite}`)
+
+
 
     }else{
 
-      this.todos[id].favorite = !this.todos[id].favorite  //change its state
-      this._todoService.todosFav.splice(this._todoService.todoFavObj[id] ,1)
-      console.log("true in fav")
+
+      console.log(`title ${this._todoService.allTodos[id].title}`)
+      console.log(`before ${this._todoService.allTodos[id].favorite}`)
+      this.todos[id].favorite = false  //change its state
+      this._todoService.allTodos[id].favorite = false
+      // this._todoService.todosFav.splice(this._todoService.todoFavObj[id] ,1)
+      console.log(`after ${this._todoService.allTodos[id].favorite}`)
 
     }
   }

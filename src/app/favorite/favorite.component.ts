@@ -11,12 +11,19 @@ import { Todo } from '../todo/todoType';
 export class FavoriteComponent implements OnInit{
 
 
-  todos : Todo [] = [];
+  allTodos : Todo[] = [];
+  favTodos : Todo[] =[]
+
 
   constructor( private _todoService: TodosService){
 
-    this.todos = this._todoService.todosFav
+    this.allTodos = this._todoService.allTodos
 
+    for(let i =0; i<this.allTodos.length; i++){
+      if(this.allTodos[i].favorite===true){
+        this.favTodos.push(this.allTodos[i])
+      }
+    }
   }
 
   
