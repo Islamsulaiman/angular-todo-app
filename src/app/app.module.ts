@@ -12,6 +12,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { DeletedComponent } from './deleted/deleted.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
+import { DoneComponent } from './done/done.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './footer/footer.component';
     NotFoundComponent,
     FavoriteComponent,
     DeletedComponent,
-    FooterComponent
+    FooterComponent,
+    DoneComponent
   ],
   imports: [
     BrowserModule,

@@ -27,11 +27,17 @@
         </div>
         <div class="me-5">
           
-          <i class="fa fa-trash fa-xl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Deleted Todo's"></i>
+          <a [routerLink]="['deleted']">
+            <i class="fa fa-trash fa-xl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Deleted Todo's"></i>
+          </a>
+          
         </div>
         <div class="me-5">
           
-          <i class="fa fa-check fa-2xl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Completed Todo's"></i>
+          <a [routerLink]="['done']">
+            <i class="fa fa-check fa-2xl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Completed Todo's"></i>
+          </a>
+          
         </div>
       </div>
   
