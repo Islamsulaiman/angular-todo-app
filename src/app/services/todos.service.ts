@@ -20,10 +20,7 @@ export class TodosService {
   completedTodoCount: number = 0
 
 
-  constructor() { 
-    // this.allTodos = this._todos.todos
-    
-  }
+  constructor() {}
 
 
 oneTodo: Todo[] =[{

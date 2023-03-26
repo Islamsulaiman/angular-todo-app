@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
+import { TodosService } from '../services/todos.service';
 import { TodoComponent } from '../todo/todo.component';
 
 type userType ={
@@ -18,7 +19,11 @@ export class NavbarComponent implements OnInit {
 
 
 
-constructor(private _service: LoginService ){}
+constructor(private _service: LoginService){
+
+
+
+}
 
 userEmail: any = this._service.email
 
