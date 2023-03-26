@@ -1,15 +1,14 @@
 import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { TodoComponent } from '../todo/todo.component';
 import { Todo } from '../todo/todoType';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodosService {
- 
-  constructor() { }
 
-  allTodos: Todo []= []
+  allTodos: Todo []=[];
 
   todosFav : Todo[] = []
   favTodoCount: number = 0
@@ -19,6 +18,13 @@ export class TodosService {
 
   todosCompleted : Todo[] = []
   completedTodoCount: number = 0
+
+
+  constructor() { 
+    // this.allTodos = this._todos.todos
+    
+  }
+
 
 oneTodo: Todo[] =[{
   id: 1,

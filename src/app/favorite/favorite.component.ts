@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TodosService } from '../services/todos.service';
+import { TodoComponent } from '../todo/todo.component';
 import { Todo } from '../todo/todoType';
 
 
-allTodos: Todo  ;
 @Component({
   selector: 'app-favorite',
   templateUrl: './favorite.component.html',
@@ -11,19 +11,32 @@ allTodos: Todo  ;
 })
 export class FavoriteComponent implements OnInit{
 
-  constructor(private _todos: TodosService){}
+
+  todos : Todo [] = [];
+
+  constructor( private _todoService: TodosService){
+
+    // this.todos = this._todos.allTodos
+    this.todos = this._todoService.allTodos
+    console.log(this.todos)
+  
+    // console.log(this.todos)
+
+  }
 
   
 
   ngOnInit(): void {
+
+    console.log(this.todos)
     // this.allTodos = this._todos.getTodos()
 
     // this.allTodos = this._todos.allTodos
-    this._todos.getTodos()
+    // this._todos.getTodos()
 
     // let allTodos: Todo = this._todos.currentMessage.subscribe(message => allTodos = message)
 
-    console.log(this._todos.oneTodo)
+    // console.log(this._todos.oneTodo)
   }
 
 

@@ -19,7 +19,10 @@
 
       <div class="d-flex align-items-center ">
         <div class="me-5">
-          <i class="fa fa-star fa-xl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Favorite Todo's"></i>
+          <a [routerLink]="['favorite']">
+            <i class="fa fa-star fa-xl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Favorite Todo's"  ></i>
+          </a>
+          
           
         </div>
         <div class="me-5">
@@ -37,13 +40,17 @@
   
         <!-- Avatar -->
         <div class="dropdown">
-          <img
-          src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-          class="rounded-circle"
-          height="25"
-          alt="Black and White Portrait of a Man"
-          loading="lazy"
-        />
+          <a [routerLink]="['todos']">
+            <img
+            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+            class="rounded-circle"
+            height="25"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+            data-toggle="tooltip" data-placement="bottom" title="Home Page"
+          />
+          </a>
+
 
           <!-- <div class="dropdown">  -->
             <button class="btn btn-primary  m-2" id="dropdownMenuButton1" type="button" data-bs-toggle="dropdown" (click)="reloadPage()">Log Out

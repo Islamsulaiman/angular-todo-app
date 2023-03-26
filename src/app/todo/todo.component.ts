@@ -36,7 +36,10 @@ export class TodoComponent implements OnInit {
 
   
 
-  constructor( private _todoService: TodosService, private _login: LoginService, private _http:HttpService){}
+  constructor( private _todoService: TodosService, private _login: LoginService, private _http:HttpService){
+    console.log('ss')
+    // this._todoService.allTodos = this.todos
+  }
 
   name : String |undefined|null = this._login.email
 
@@ -54,6 +57,11 @@ export class TodoComponent implements OnInit {
       todo.deleted = false
       this.todos.push(todo);
       this.newTodo = "";
+
+
+      console.log(this.todos)
+
+      this._todoService.allTodos = this.todos
 
       console.log("from the http reguest")
       console.log( this._http.getAllUsers())

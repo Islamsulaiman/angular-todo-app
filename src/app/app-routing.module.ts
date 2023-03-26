@@ -5,12 +5,14 @@ import { LoginAuthGuard } from './guards/login-auth.guard';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DeletedComponent } from './deleted/deleted.component';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { TodoComponent } from './todo/todo.component';
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent, canActivate:[LoginAuthGuard]},
   {path: '', component : LoginComponent, canActivate: [LoginAuthGuard]},
-  {path: 'deleted',  component:  DeletedComponent},
-  {path: 'favorite',  component:  FavoriteComponent},
+  {path: 'todos', component:TodoComponent, canActivate: [LoginAuthGuard]},
+  {path: 'deleted',  component:  DeletedComponent, canActivate: [LoginAuthGuard]},
+  {path: 'favorite',  component:  FavoriteComponent, canActivate: [LoginAuthGuard]},
 
 
   {path: '**',  component:  NotFoundComponent},
