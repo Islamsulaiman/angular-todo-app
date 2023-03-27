@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 import { LoginAuthGuard } from '../guards/login-auth.guard';
 import { LoginService } from '../services/login.service';
 import { TodosService } from '../services/todos.service';
@@ -20,7 +21,7 @@ export class NavbarComponent implements OnInit {
 
 
 
-constructor(private _service: LoginService, private _authGuard: LoginAuthGuard){
+constructor(private _service: LoginService, private _authGuard: LoginAuthGuard, private loginGuard:LoginAuthGuard, private appComp: AppComponent){
 
 
 
@@ -35,8 +36,11 @@ userEmail: any = this._service.email
   }
 
   reloadPage(){
-    this._authGuard.logOut()
+    // this._authGuard.logOut()
     // window.location.reload()
+    this.appComp.logOut()
+    this._authGuard.logOut()
+    window.location.reload()
     
   }
 

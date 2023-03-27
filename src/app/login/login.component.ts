@@ -39,6 +39,7 @@ export class LoginComponent {
       alert('Please enter the form data')
     }else{
       this.logginSwitch.loggedIn()
+      this.loginGuard.loggedInSwitch()
       this._router.navigate(['/todos'])
     }
 

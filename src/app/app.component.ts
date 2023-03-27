@@ -15,6 +15,10 @@ export class AppComponent implements OnInit {
     this.isLoggedIn = true;
   }
 
+  logOut(){
+    this.isLoggedIn = false
+  }
+
   ngOnInit(): void {}
 
   title = 'angular-app';

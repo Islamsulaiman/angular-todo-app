@@ -19,7 +19,7 @@ export class LoginAuthGuard implements CanActivate {
   loggedInSwitch(){
     this.isLogged = true;
     console.log(this.isLogged)
-    this.loggedInSource.next(this.isLogged)
+    // this.loggedInSource.next(this.isLogged)
   }
 
   logOut(){
@@ -40,6 +40,6 @@ export class LoginAuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):any| Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.isLogged ? this.youAreLoggedIn() : true;
+    return this.isLogged ?  true  : this._router.navigate(['/login']) ;
   }
 }
