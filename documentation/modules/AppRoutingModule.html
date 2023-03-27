@@ -79,12 +79,16 @@ import { LoginAuthGuard } from &#x27;./guards/login-auth.guard&#x27;;
 import { NotFoundComponent } from &#x27;./not-found/not-found.component&#x27;;
 import { DeletedComponent } from &#x27;./deleted/deleted.component&#x27;;
 import { FavoriteComponent } from &#x27;./favorite/favorite.component&#x27;;
+import { TodoComponent } from &#x27;./todo/todo.component&#x27;;
+import { DoneComponent } from &#x27;./done/done.component&#x27;;
 
 const routes: Routes &#x3D; [
-  {path: &#x27;login&#x27;,component:LoginComponent, canActivate:[LoginAuthGuard]},
-  {path: &#x27;&#x27;, component : LoginComponent, canActivate: [LoginAuthGuard]},
-  {path: &#x27;deleted&#x27;,  component:  DeletedComponent},
-  {path: &#x27;favorite&#x27;,  component:  FavoriteComponent},
+  {path: &#x27;&#x27;, redirectTo: &#x27;/login&#x27;, pathMatch: &#x27;full&#x27;},
+  { path: &#x27;login&#x27;, component: LoginComponent },
+  {path: &#x27;todos&#x27;, component:TodoComponent, canActivate: [LoginAuthGuard]},
+  {path: &#x27;deleted&#x27;,  component:  DeletedComponent, canActivate: [LoginAuthGuard]},
+  {path: &#x27;favorite&#x27;,  component:  FavoriteComponent, canActivate: [LoginAuthGuard]},
+  {path: &#x27;done&#x27;,  component:  DoneComponent, canActivate: [LoginAuthGuard]},
 
 
   {path: &#x27;**&#x27;,  component:  NotFoundComponent},

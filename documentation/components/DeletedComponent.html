@@ -70,6 +70,12 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -115,272 +121,380 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#deletedTodos" >deletedTodos</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_todoService: <a href="../injectables/TodosService.html" target="_self">TodosService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/deleted/deleted.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_todoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TodosService.html" target="_self" >TodosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/deleted/deleted.component.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletedTodos"></a>
+                    <span class="name">
+                        <span ><b>deletedTodos</b></span>
+                        <a href="#deletedTodos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Todo.html" target="_self" >Todo[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/deleted/deleted.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { TodoComponent } from &#x27;../todo/todo.component&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { TodosService } from &#x27;../services/todos.service&#x27;;
+import { Todo } from &#x27;../todo/todoType&#x27;;
 
 @Component({
   selector: &#x27;app-deleted&#x27;,
   templateUrl: &#x27;./deleted.component.html&#x27;,
   styleUrls: [&#x27;./deleted.component.css&#x27;]
 })
-export class DeletedComponent {
+export class DeletedComponent implements OnInit{
 
-  // constructor(p){}
-  // todoCount: number &#x3D; 0
+  // allTodos : Todo[] &#x3D; []
 
-  // countTodo(){
-  //   this.todoCount &#x3D; this._todos.todos.length -1
-  //   return this.todoCount
-  // }
+  deletedTodos: Todo [] &#x3D; []              
 
+  constructor(private _todoService: TodosService){
 
+    this.deletedTodos &#x3D; this._todoService.todosDeleted
+
+  //   for(let i &#x3D;0; i&lt;this.allTodos.length; i++){
+  //     if(this.allTodos[i].deleted&#x3D;&#x3D;&#x3D;true){
+  //       this.deletedTodos.push(this.allTodos[i])
+  //     }
+  //   }
+
+  }
+
+  ngOnInit(): void {
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;body&gt;
-    
-&lt;style&gt;
-    html,
-body,
-.intro {
-  height: 100%;
-}
+        <pre class="line-numbers"><code class="language-html">
+&lt;div class&#x3D;&quot;table-wrapper&quot;&gt;
 
-table td,
-table th {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+          &lt;h2 class&#x3D;&quot;pt-3 pb-4 text-center font-bold font-up deep-purple-text text-muted&quot;&gt;&lt;span class&#x3D;&quot;h1&quot;&gt;Deleted Todo&#x27;s&lt;/span&gt; &lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
 
-thead th {
-  color: #fff;
-}
+    &lt;table class&#x3D;&quot;fl-table&quot;&gt;
+        &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th class&#x3D;&quot;h3&quot;&gt;#&lt;/th&gt;
+            &lt;th class&#x3D;&quot;h3&quot;&gt;Todo&lt;/th&gt;
 
-.card {
-  border-radius: .5rem;
-}
+        &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;tr *ngFor&#x3D;&quot;let todo of deletedTodos; let i &#x3D;index&quot;&gt;
+            &lt;td &gt;&lt;span class&#x3D;&quot;h6&quot;&gt; {{i+1}}&lt;/span&gt;&lt;/td&gt;
+            &lt;td &gt;&lt;span class&#x3D;&quot;h6&quot;&gt; {{todo.title}}&lt;/span&gt;&lt;/td&gt;
 
-.table-scroll {
-  border-radius: .5rem;
-}
-
-.table-scroll table thead th {
-  font-size: 1.25rem;
-}
-thead {
-  top: 0;
-  position: sticky;
-}
-&lt;/style&gt;
-    &lt;section class&#x3D;&quot;intro&quot;&gt;
-        &lt;div class&#x3D;&quot;bg-image h-100&quot; style&#x3D;&quot;background-color: #f5f7fa;&quot;&gt;
-          &lt;div class&#x3D;&quot;mask d-flex align-items-center h-100&quot;&gt;
-            &lt;div class&#x3D;&quot;container&quot;&gt;
-              &lt;div class&#x3D;&quot;row justify-content-center&quot;&gt;
-                &lt;div class&#x3D;&quot;col-12&quot;&gt;
-                  &lt;div class&#x3D;&quot;card&quot;&gt;
-                    &lt;div class&#x3D;&quot;card-body p-0&quot;&gt;
-                      &lt;div class&#x3D;&quot;table-responsive table-scroll&quot; data-mdb-perfect-scrollbar&#x3D;&quot;true&quot; style&#x3D;&quot;position: relative; height: 700px&quot;&gt;
-                        &lt;table class&#x3D;&quot;table table-striped mb-0&quot;&gt;
-                          &lt;thead style&#x3D;&quot;background-color: #002d72;&quot;&gt;
-                            &lt;tr&gt;
-                              &lt;th scope&#x3D;&quot;col&quot;&gt;Class name&lt;/th&gt;
-                              &lt;th scope&#x3D;&quot;col&quot;&gt;Type&lt;/th&gt;
-                              &lt;th scope&#x3D;&quot;col&quot;&gt;Hours&lt;/th&gt;
-                              &lt;th scope&#x3D;&quot;col&quot;&gt;Trainer&lt;/th&gt;
-                              &lt;th scope&#x3D;&quot;col&quot;&gt;Spots&lt;/th&gt;
-                            &lt;/tr&gt;
-                          &lt;/thead&gt;
-                          &lt;tbody&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Like a butterfly&lt;/td&gt;
-                              &lt;td&gt;Boxing&lt;/td&gt;
-                              &lt;td&gt;9:00 AM - 11:00 AM&lt;/td&gt;
-                              &lt;td&gt;Aaron Chapman&lt;/td&gt;
-                              &lt;td&gt;10&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Mind &amp;amp; Body&lt;/td&gt;
-                              &lt;td&gt;Yoga&lt;/td&gt;
-                              &lt;td&gt;8:00 AM - 9:00 AM&lt;/td&gt;
-                              &lt;td&gt;Adam Stewart&lt;/td&gt;
-                              &lt;td&gt;15&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Crit Cardio&lt;/td&gt;
-                              &lt;td&gt;Gym&lt;/td&gt;
-                              &lt;td&gt;9:00 AM - 10:00 AM&lt;/td&gt;
-                              &lt;td&gt;Aaron Chapman&lt;/td&gt;
-                              &lt;td&gt;10&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Wheel Pose Full Posture&lt;/td&gt;
-                              &lt;td&gt;Yoga&lt;/td&gt;
-                              &lt;td&gt;7:00 AM - 8:30 AM&lt;/td&gt;
-                              &lt;td&gt;Donna Wilson&lt;/td&gt;
-                              &lt;td&gt;15&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Playful Dancer&#x27;s Flow&lt;/td&gt;
-                              &lt;td&gt;Yoga&lt;/td&gt;
-                              &lt;td&gt;8:00 AM - 9:00 AM&lt;/td&gt;
-                              &lt;td&gt;Donna Wilson&lt;/td&gt;
-                              &lt;td&gt;10&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Zumba Dance&lt;/td&gt;
-                              &lt;td&gt;Dance&lt;/td&gt;
-                              &lt;td&gt;5:00 PM - 7:00 PM&lt;/td&gt;
-                              &lt;td&gt;Donna Wilson&lt;/td&gt;
-                              &lt;td&gt;20&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Cardio Blast&lt;/td&gt;
-                              &lt;td&gt;Gym&lt;/td&gt;
-                              &lt;td&gt;5:00 PM - 7:00 PM&lt;/td&gt;
-                              &lt;td&gt;Randy Porter&lt;/td&gt;
-                              &lt;td&gt;10&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Pilates Reformer&lt;/td&gt;
-                              &lt;td&gt;Gym&lt;/td&gt;
-                              &lt;td&gt;8:00 AM - 9:00 AM&lt;/td&gt;
-                              &lt;td&gt;Randy Porter&lt;/td&gt;
-                              &lt;td&gt;10&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Supple Spine and Shoulders&lt;/td&gt;
-                              &lt;td&gt;Yoga&lt;/td&gt;
-                              &lt;td&gt;6:30 AM - 8:00 AM&lt;/td&gt;
-                              &lt;td&gt;Randy Porter&lt;/td&gt;
-                              &lt;td&gt;15&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Yoga for Divas&lt;/td&gt;
-                              &lt;td&gt;Yoga&lt;/td&gt;
-                              &lt;td&gt;9:00 AM - 11:00 AM&lt;/td&gt;
-                              &lt;td&gt;Donna Wilson&lt;/td&gt;
-                              &lt;td&gt;20&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Virtual Cycle&lt;/td&gt;
-                              &lt;td&gt;Gym&lt;/td&gt;
-                              &lt;td&gt;8:00 AM - 9:00 AM&lt;/td&gt;
-                              &lt;td&gt;Randy Porter&lt;/td&gt;
-                              &lt;td&gt;20&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Like a butterfly&lt;/td&gt;
-                              &lt;td&gt;Boxing&lt;/td&gt;
-                              &lt;td&gt;9:00 AM - 11:00 AM&lt;/td&gt;
-                              &lt;td&gt;Aaron Chapman&lt;/td&gt;
-                              &lt;td&gt;10&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Mind &amp;amp; Body&lt;/td&gt;
-                              &lt;td&gt;Yoga&lt;/td&gt;
-                              &lt;td&gt;8:00 AM - 9:00 AM&lt;/td&gt;
-                              &lt;td&gt;Adam Stewart&lt;/td&gt;
-                              &lt;td&gt;15&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Crit Cardio&lt;/td&gt;
-                              &lt;td&gt;Gym&lt;/td&gt;
-                              &lt;td&gt;9:00 AM - 10:00 AM&lt;/td&gt;
-                              &lt;td&gt;Aaron Chapman&lt;/td&gt;
-                              &lt;td&gt;10&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Wheel Pose Full Posture&lt;/td&gt;
-                              &lt;td&gt;Yoga&lt;/td&gt;
-                              &lt;td&gt;7:00 AM - 8:30 AM&lt;/td&gt;
-                              &lt;td&gt;Donna Wilson&lt;/td&gt;
-                              &lt;td&gt;15&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Playful Dancer&#x27;s Flow&lt;/td&gt;
-                              &lt;td&gt;Yoga&lt;/td&gt;
-                              &lt;td&gt;8:00 AM - 9:00 AM&lt;/td&gt;
-                              &lt;td&gt;Donna Wilson&lt;/td&gt;
-                              &lt;td&gt;10&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Zumba Dance&lt;/td&gt;
-                              &lt;td&gt;Dance&lt;/td&gt;
-                              &lt;td&gt;5:00 PM - 7:00 PM&lt;/td&gt;
-                              &lt;td&gt;Donna Wilson&lt;/td&gt;
-                              &lt;td&gt;20&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Cardio Blast&lt;/td&gt;
-                              &lt;td&gt;Gym&lt;/td&gt;
-                              &lt;td&gt;5:00 PM - 7:00 PM&lt;/td&gt;
-                              &lt;td&gt;Randy Porter&lt;/td&gt;
-                              &lt;td&gt;10&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Pilates Reformer&lt;/td&gt;
-                              &lt;td&gt;Gym&lt;/td&gt;
-                              &lt;td&gt;8:00 AM - 9:00 AM&lt;/td&gt;
-                              &lt;td&gt;Randy Porter&lt;/td&gt;
-                              &lt;td&gt;10&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Supple Spine and Shoulders&lt;/td&gt;
-                              &lt;td&gt;Yoga&lt;/td&gt;
-                              &lt;td&gt;6:30 AM - 8:00 AM&lt;/td&gt;
-                              &lt;td&gt;Randy Porter&lt;/td&gt;
-                              &lt;td&gt;15&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Yoga for Divas&lt;/td&gt;
-                              &lt;td&gt;Yoga&lt;/td&gt;
-                              &lt;td&gt;9:00 AM - 11:00 AM&lt;/td&gt;
-                              &lt;td&gt;Donna Wilson&lt;/td&gt;
-                              &lt;td&gt;20&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td&gt;Virtual Cycle&lt;/td&gt;
-                              &lt;td&gt;Gym&lt;/td&gt;
-                              &lt;td&gt;8:00 AM - 9:00 AM&lt;/td&gt;
-                              &lt;td&gt;Randy Porter&lt;/td&gt;
-                              &lt;td&gt;20&lt;/td&gt;
-                            &lt;/tr&gt;
-                          &lt;/tbody&gt;
-                        &lt;/table&gt;
-                      &lt;/div&gt;
-                    &lt;/div&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/section&gt;
-&lt;/body&gt;
-</code></pre>
+        &lt;/tr&gt;
+        &lt;tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
                     <code>./deleted.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+    background: rgba( 71, 147, 227, 1);
+}
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding: 30px 0;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: &quot;Scroll horizontally &gt;&quot;;
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -408,8 +522,8 @@ thead {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><body>    <style>    html,body,.intro {  height: 100%;}table td,table th {  text-overflow: ellipsis;  white-space: nowrap;  overflow: hidden;}thead th {  color: #fff;}.card {  border-radius: .5rem;}.table-scroll {  border-radius: .5rem;}.table-scroll table thead th {  font-size: 1.25rem;}thead {  top: 0;  position: sticky;}</style>    <section class="intro">        <div class="bg-image h-100" style="background-color: #f5f7fa;">          <div class="mask d-flex align-items-center h-100">            <div class="container">              <div class="row justify-content-center">                <div class="col-12">                  <div class="card">                    <div class="card-body p-0">                      <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">                        <table class="table table-striped mb-0">                          <thead style="background-color: #002d72;">                            <tr>                              <th scope="col">Class name</th>                              <th scope="col">Type</th>                              <th scope="col">Hours</th>                              <th scope="col">Trainer</th>                              <th scope="col">Spots</th>                            </tr>                          </thead>                          <tbody>                            <tr>                              <td>Like a butterfly</td>                              <td>Boxing</td>                              <td>9:00 AM - 11:00 AM</td>                              <td>Aaron Chapman</td>                              <td>10</td>                            </tr>                            <tr>                              <td>Mind &amp; Body</td>                              <td>Yoga</td>                              <td>8:00 AM - 9:00 AM</td>                              <td>Adam Stewart</td>                              <td>15</td>                            </tr>                            <tr>                              <td>Crit Cardio</td>                              <td>Gym</td>                              <td>9:00 AM - 10:00 AM</td>                              <td>Aaron Chapman</td>                              <td>10</td>                            </tr>                            <tr>                              <td>Wheel Pose Full Posture</td>                              <td>Yoga</td>                              <td>7:00 AM - 8:30 AM</td>                              <td>Donna Wilson</td>                              <td>15</td>                            </tr>                            <tr>                              <td>Playful Dancer\'s Flow</td>                              <td>Yoga</td>                              <td>8:00 AM - 9:00 AM</td>                              <td>Donna Wilson</td>                              <td>10</td>                            </tr>                            <tr>                              <td>Zumba Dance</td>                              <td>Dance</td>                              <td>5:00 PM - 7:00 PM</td>                              <td>Donna Wilson</td>                              <td>20</td>                            </tr>                            <tr>                              <td>Cardio Blast</td>                              <td>Gym</td>                              <td>5:00 PM - 7:00 PM</td>                              <td>Randy Porter</td>                              <td>10</td>                            </tr>                            <tr>                              <td>Pilates Reformer</td>                              <td>Gym</td>                              <td>8:00 AM - 9:00 AM</td>                              <td>Randy Porter</td>                              <td>10</td>                            </tr>                            <tr>                              <td>Supple Spine and Shoulders</td>                              <td>Yoga</td>                              <td>6:30 AM - 8:00 AM</td>                              <td>Randy Porter</td>                              <td>15</td>                            </tr>                            <tr>                              <td>Yoga for Divas</td>                              <td>Yoga</td>                              <td>9:00 AM - 11:00 AM</td>                              <td>Donna Wilson</td>                              <td>20</td>                            </tr>                            <tr>                              <td>Virtual Cycle</td>                              <td>Gym</td>                              <td>8:00 AM - 9:00 AM</td>                              <td>Randy Porter</td>                              <td>20</td>                            </tr>                            <tr>                              <td>Like a butterfly</td>                              <td>Boxing</td>                              <td>9:00 AM - 11:00 AM</td>                              <td>Aaron Chapman</td>                              <td>10</td>                            </tr>                            <tr>                              <td>Mind &amp; Body</td>                              <td>Yoga</td>                              <td>8:00 AM - 9:00 AM</td>                              <td>Adam Stewart</td>                              <td>15</td>                            </tr>                            <tr>                              <td>Crit Cardio</td>                              <td>Gym</td>                              <td>9:00 AM - 10:00 AM</td>                              <td>Aaron Chapman</td>                              <td>10</td>                            </tr>                            <tr>                              <td>Wheel Pose Full Posture</td>                              <td>Yoga</td>                              <td>7:00 AM - 8:30 AM</td>                              <td>Donna Wilson</td>                              <td>15</td>                            </tr>                            <tr>                              <td>Playful Dancer\'s Flow</td>                              <td>Yoga</td>                              <td>8:00 AM - 9:00 AM</td>                              <td>Donna Wilson</td>                              <td>10</td>                            </tr>                            <tr>                              <td>Zumba Dance</td>                              <td>Dance</td>                              <td>5:00 PM - 7:00 PM</td>                              <td>Donna Wilson</td>                              <td>20</td>                            </tr>                            <tr>                              <td>Cardio Blast</td>                              <td>Gym</td>                              <td>5:00 PM - 7:00 PM</td>                              <td>Randy Porter</td>                              <td>10</td>                            </tr>                            <tr>                              <td>Pilates Reformer</td>                              <td>Gym</td>                              <td>8:00 AM - 9:00 AM</td>                              <td>Randy Porter</td>                              <td>10</td>                            </tr>                            <tr>                              <td>Supple Spine and Shoulders</td>                              <td>Yoga</td>                              <td>6:30 AM - 8:00 AM</td>                              <td>Randy Porter</td>                              <td>15</td>                            </tr>                            <tr>                              <td>Yoga for Divas</td>                              <td>Yoga</td>                              <td>9:00 AM - 11:00 AM</td>                              <td>Donna Wilson</td>                              <td>20</td>                            </tr>                            <tr>                              <td>Virtual Cycle</td>                              <td>Gym</td>                              <td>8:00 AM - 9:00 AM</td>                              <td>Randy Porter</td>                              <td>20</td>                            </tr>                          </tbody>                        </table>                      </div>                    </div>                  </div>                </div>              </div>            </div>          </div>        </div>      </section></body></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DeletedComponent', 'selector': 'app-deleted'},{'name': 'FavoriteComponent', 'selector': 'app-favorite'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'TodoComponent', 'selector': 'app-todo'}];
+        var COMPONENT_TEMPLATE = '<div><div class="table-wrapper">    <div class="row">      <div class="col-md-12">          <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text text-muted"><span class="h1">Deleted Todo\'s</span> </h2>      </div>    </div>    <table class="fl-table">        <thead>        <tr>            <th class="h3">#</th>            <th class="h3">Todo</th>        </tr>        </thead>        <tbody>        <tr *ngFor="let todo of deletedTodos; let i =index">            <td ><span class="h6"> {{i+1}}</span></td>            <td ><span class="h6"> {{todo.title}}</span></td>        </tr>        <tbody>    </table></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DeletedComponent', 'selector': 'app-deleted'},{'name': 'DoneComponent', 'selector': 'app-done'},{'name': 'FavoriteComponent', 'selector': 'app-favorite'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'TodoComponent', 'selector': 'app-todo'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DeletedComponent'};
 </script>

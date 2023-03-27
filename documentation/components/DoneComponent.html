@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  FavoriteComponent</li>
+  DoneComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -64,18 +64,12 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/favorite/favorite.component.ts</code>
+    <code>src/app/done/done.component.ts</code>
 </p>
 
 
 
 
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-    </p>
 
 
 <section>
@@ -95,19 +89,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-favorite</code></td>
+                <td class="col-md-9"><code>app-done</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./favorite.component.css</code></td>
+                <td class="col-md-9"><code>./done.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./favorite.component.html</code></td>
+                <td class="col-md-9"><code>./done.component.html</code></td>
             </tr>
 
 
@@ -137,26 +131,12 @@
                                 <a href="#allTodos" >allTodos</a>
                             </li>
                             <li>
-                                <a href="#favTodos" >favTodos</a>
+                                <a href="#completedTodo" >completedTodo</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#ngOnInit" >ngOnInit</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
 
 
@@ -177,7 +157,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/favorite/favorite.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/done/done.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -219,49 +199,7 @@
 
 
 
-    <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <span ><b>ngOnInit</b></span>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
 
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/favorite/favorite.component.ts:32</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
     <section>
     
     <h3 id="inputs">
@@ -291,7 +229,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/favorite/favorite.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/done/done.component.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -302,10 +240,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="favTodos"></a>
+                    <a name="completedTodo"></a>
                     <span class="name">
-                        <span ><b>favTodos</b></span>
-                        <a href="#favTodos"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>completedTodo</b></span>
+                        <a href="#completedTodo"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -322,7 +260,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/favorite/favorite.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/done/done.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -335,50 +273,36 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import { TodosService } from &#x27;../services/todos.service&#x27;;
 import { Todo } from &#x27;../todo/todoType&#x27;;
 
-
 @Component({
-  selector: &#x27;app-favorite&#x27;,
-  templateUrl: &#x27;./favorite.component.html&#x27;,
-  styleUrls: [&#x27;./favorite.component.css&#x27;]
+  selector: &#x27;app-done&#x27;,
+  templateUrl: &#x27;./done.component.html&#x27;,
+  styleUrls: [&#x27;./done.component.css&#x27;]
 })
-export class FavoriteComponent implements OnInit{
+export class DoneComponent {
 
+  allTodos :Todo[] &#x3D; []
+  completedTodo :Todo[] &#x3D; []
 
-  allTodos : Todo[] &#x3D; [];
-  favTodos : Todo[] &#x3D;[]
+  constructor(private _todoService: TodosService){
 
-
-  constructor( private _todoService: TodosService){
 
     this.allTodos &#x3D; this._todoService.allTodos
 
     for(let i &#x3D;0; i&lt;this.allTodos.length; i++){
-      if(this.allTodos[i].favorite&#x3D;&#x3D;&#x3D;true){
-        this.favTodos.push(this.allTodos[i])
+      if(this.allTodos[i].completed &#x3D;&#x3D;&#x3D; true){
+        this.completedTodo.push(this.allTodos[i])
       }
     }
-    
+
+
+    console.log(this.completedTodo)
+
+
   }
-
-  
-
-  ngOnInit(): void {
-
-    // console.log(this .todos[0].title)
-    // this.allTodos &#x3D; this._todos.getTodos()
-
-    // this.allTodos &#x3D; this._todos.allTodos
-    // this._todos.getTodos()
-
-    // let allTodos: Todo &#x3D; this._todos.currentMessage.subscribe(message &#x3D;&gt; allTodos &#x3D; message)
-
-    // console.log(this._todos.oneTodo)
-  }
-
 
 }
 </code></pre>
@@ -390,7 +314,7 @@ export class FavoriteComponent implements OnInit{
 
     &lt;div class&#x3D;&quot;row&quot;&gt;
       &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
-          &lt;h2 class&#x3D;&quot;pt-3 pb-4 text-center font-bold font-up deep-purple-text text-muted&quot;&gt;&lt;span class&#x3D;&quot;h1&quot;&gt;Favorite Todo&#x27;s&lt;/span&gt; &lt;/h2&gt;
+          &lt;h2 class&#x3D;&quot;pt-3 pb-4 text-center font-bold font-up deep-purple-text text-muted&quot;&gt;&lt;span class&#x3D;&quot;h1&quot;&gt;Completed Todo&#x27;s&lt;/span&gt; &lt;/h2&gt;
       &lt;/div&gt;
     &lt;/div&gt;
 
@@ -403,7 +327,7 @@ export class FavoriteComponent implements OnInit{
         &lt;/tr&gt;
         &lt;/thead&gt;
         &lt;tbody&gt;
-        &lt;tr *ngFor&#x3D;&quot;let todo of favTodos; let i &#x3D;index&quot;&gt;
+        &lt;tr *ngFor&#x3D;&quot;let todo of completedTodo; let i &#x3D;index&quot;&gt;
             &lt;td &gt;&lt;span class&#x3D;&quot;h6&quot;&gt; {{i+1}}&lt;/span&gt;&lt;/td&gt;
             &lt;td &gt;&lt;span class&#x3D;&quot;h6&quot;&gt; {{todo.title}}&lt;/span&gt;&lt;/td&gt;
 
@@ -415,7 +339,7 @@ export class FavoriteComponent implements OnInit{
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./favorite.component.css</code>
+                    <code>./done.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">*{
     box-sizing: border-box;
@@ -572,10 +496,10 @@ h2{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="table-wrapper">    <div class="row">      <div class="col-md-12">          <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text text-muted"><span class="h1">Favorite Todo\'s</span> </h2>      </div>    </div>    <table class="fl-table">        <thead>        <tr>            <th class="h3">#</th>            <th class="h3">Todo</th>        </tr>        </thead>        <tbody>        <tr *ngFor="let todo of favTodos; let i =index">            <td ><span class="h6"> {{i+1}}</span></td>            <td ><span class="h6"> {{todo.title}}</span></td>        </tr>        <tbody>    </table></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="table-wrapper">    <div class="row">      <div class="col-md-12">          <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text text-muted"><span class="h1">Completed Todo\'s</span> </h2>      </div>    </div>    <table class="fl-table">        <thead>        <tr>            <th class="h3">#</th>            <th class="h3">Todo</th>        </tr>        </thead>        <tbody>        <tr *ngFor="let todo of completedTodo; let i =index">            <td ><span class="h6"> {{i+1}}</span></td>            <td ><span class="h6"> {{todo.title}}</span></td>        </tr>        <tbody>    </table></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DeletedComponent', 'selector': 'app-deleted'},{'name': 'DoneComponent', 'selector': 'app-done'},{'name': 'FavoriteComponent', 'selector': 'app-favorite'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'TodoComponent', 'selector': 'app-todo'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'FavoriteComponent'};
+    var ACTUAL_COMPONENT = {'name': 'DoneComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -621,7 +545,7 @@ h2{
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'FavoriteComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'DoneComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

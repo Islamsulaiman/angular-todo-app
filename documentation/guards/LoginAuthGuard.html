@@ -112,6 +112,9 @@
                                 <a href="#loggedInSwitch" >loggedInSwitch</a>
                             </li>
                             <li>
+                                <a href="#logOut" >logOut</a>
+                            </li>
+                            <li>
                                 <a href="#youAreLoggedIn" >youAreLoggedIn</a>
                             </li>
                         </ul>
@@ -200,8 +203,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/guards/login-auth.guard.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/guards/login-auth.guard.ts:27</a></div>
                 </td>
             </tr>
 
@@ -237,8 +240,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/guards/login-auth.guard.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/guards/login-auth.guard.ts:37</a></div>
                 </td>
             </tr>
 
@@ -318,8 +321,45 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/guards/login-auth.guard.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/guards/login-auth.guard.ts:17</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logOut"></a>
+                    <span class="name">
+                        <span ><b>logOut</b></span>
+                        <a href="#logOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logOut()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/guards/login-auth.guard.ts:22</a></div>
                 </td>
             </tr>
 
@@ -355,8 +395,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/guards/login-auth.guard.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/guards/login-auth.guard.ts:32</a></div>
                 </td>
             </tr>
 
@@ -390,19 +430,22 @@ export class LoginAuthGuard implements CanActivate {
   
   constructor(private _router: Router){}
 
-
-  //create observable to check for created todo&#x27;s
   private loggedInSource &#x3D; new BehaviorSubject(this.isLogged);
   loggedIn &#x3D; this.loggedInSource.asObservable();
 
   loggedInSwitch(){
     this.isLogged &#x3D; true;
     console.log(this.isLogged)
-    this.loggedInSource.next(this.isLogged)
+  }
+
+  logOut(){
+    this.isLogged &#x3D; false
+    console.log(this.isLogged)
   }
 
   areWeLoggedIn(){
     return this.isLogged
+    
   }
 
   youAreLoggedIn(){
@@ -413,7 +456,7 @@ export class LoginAuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):any| Observable&lt;boolean | UrlTree&gt; | Promise&lt;boolean | UrlTree&gt; | boolean | UrlTree {
-    return this.isLogged ? this.youAreLoggedIn() : true;
+    return this.isLogged ?  true  : this._router.navigate([&#x27;/login&#x27;]) ;
   }
 }
 </code></pre>

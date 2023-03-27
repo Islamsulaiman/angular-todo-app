@@ -172,12 +172,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_service: <a href="../injectables/LoginService.html" target="_self">LoginService</a>)</code>
+<code>constructor(_service: <a href="../injectables/LoginService.html" target="_self">LoginService</a>, _authGuard: <a href="../guards/LoginAuthGuard.html" target="_self">LoginAuthGuard</a>, loginGuard: <a href="../guards/LoginAuthGuard.html" target="_self">LoginAuthGuard</a>, appComp: <a href="../components/AppComponent.html" target="_self">AppComponent</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/navbar/navbar.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/navbar/navbar.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -199,6 +199,42 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/LoginService.html" target="_self" >LoginService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_authGuard</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../guards/LoginAuthGuard.html" target="_self" >LoginAuthGuard</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loginGuard</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../guards/LoginAuthGuard.html" target="_self" >LoginAuthGuard</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>appComp</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../components/AppComponent.html" target="_self" >AppComponent</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -244,8 +280,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/navbar/navbar.component.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/navbar/navbar.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -281,8 +317,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/navbar/navbar.component.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/navbar/navbar.component.ts:30</a></div>
                 </td>
             </tr>
 
@@ -342,7 +378,10 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { AppComponent } from &#x27;../app.component&#x27;;
+import { LoginAuthGuard } from &#x27;../guards/login-auth.guard&#x27;;
 import { LoginService } from &#x27;../services/login.service&#x27;;
+import { TodosService } from &#x27;../services/todos.service&#x27;;
 import { TodoComponent } from &#x27;../todo/todo.component&#x27;;
 
 type userType &#x3D;{
@@ -358,36 +397,22 @@ type userType &#x3D;{
 
 export class NavbarComponent implements OnInit {
 
-
-
-
-constructor(private _service: LoginService ){}
+constructor(private _service: LoginService, private _authGuard: LoginAuthGuard, private loginGuard:LoginAuthGuard, private appComp: AppComponent){}
 
 userEmail: any &#x3D; this._service.email
-
-// todoCount: number &#x3D; 0
-// favTodoCount: number &#x3D; 0
-// completedTodoCount: number &#x3D; 0
-
 
   ngOnInit(): void {
 
     this._service.pushUserData()
 
-    // this.userEmail &#x3D;  this._service.userData.subscribe(userEmail &#x3D;&gt; this.userEmail &#x3D; JSON.stringify (userEmail)) 
-    console.log(this.userEmail)
   }
-
   reloadPage(){
+
+    this.appComp.logOut()
+    this._authGuard.logOut()
     window.location.reload()
+    
   }
-
-  // // utilties
-  // todoCountFunc(){
-  //   this.todoCount &#x3D; this.todos.todos.length -1
-  // }
-
-
 
 }
 </code></pre>
@@ -398,18 +423,7 @@ userEmail: any &#x3D; this._service.email
 &lt;nav class&#x3D;&quot;navbar  navbar-light bg-light&quot;&gt;
     &lt;!-- Container wrapper --&gt;
     &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
-      &lt;!-- Toggle button
-      &lt;button
-        class&#x3D;&quot;navbar-toggler&quot;
-        type&#x3D;&quot;button&quot;
-        data-mdb-toggle&#x3D;&quot;collapse&quot;
-        data-mdb-target&#x3D;&quot;#navbarSupportedContent&quot;
-        aria-controls&#x3D;&quot;navbarSupportedContent&quot;
-        aria-expanded&#x3D;&quot;false&quot;
-        aria-label&#x3D;&quot;Toggle navigation&quot;
-      &gt;
-        &lt;i class&#x3D;&quot;fas fa-bars&quot;&gt;&lt;/i&gt;
-      &lt;/button&gt; --&gt;
+
   
       &lt;!-- Collapsible wrapper --&gt;
       &lt;div class&#x3D;&quot;collapse navbar-collapse&quot; id&#x3D;&quot;navbarSupportedContent&quot;&gt;
@@ -426,85 +440,56 @@ userEmail: any &#x3D; this._service.email
 
       &lt;div class&#x3D;&quot;d-flex align-items-center &quot;&gt;
         &lt;div class&#x3D;&quot;me-5&quot;&gt;
-          &lt;span&gt;favorit&lt;/span&gt;
-          &lt;!-- &lt;span&gt;{{todoCount}}&lt;/span&gt; --&gt;
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;favorite&#x27;]&quot;&gt;
+            &lt;i class&#x3D;&quot;fa fa-star fa-xl&quot; aria-hidden&#x3D;&quot;true&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;bottom&quot; title&#x3D;&quot;Favorite Todo&#x27;s&quot;  &gt;&lt;/i&gt;
+          &lt;/a&gt;
+          
           
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;me-5&quot;&gt;
-          deleted
+          
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;deleted&#x27;]&quot;&gt;
+            &lt;i class&#x3D;&quot;fa fa-trash fa-xl&quot; aria-hidden&#x3D;&quot;true&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;bottom&quot; title&#x3D;&quot;Deleted Todo&#x27;s&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;me-5&quot;&gt;
-          completed
+          
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;done&#x27;]&quot;&gt;
+            &lt;i class&#x3D;&quot;fa fa-check fa-2xl&quot; aria-hidden&#x3D;&quot;true&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;bottom&quot; title&#x3D;&quot;Completed Todo&#x27;s&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          
         &lt;/div&gt;
       &lt;/div&gt;
   
       &lt;!-- Right elements --&gt;
       &lt;div class&#x3D;&quot;d-flex align-items-center&quot;&gt;
-        &lt;!-- Icon --&gt;
-        &lt;a class&#x3D;&quot;text-reset me-3&quot; href&#x3D;&quot;#&quot;&gt;
-          &lt;i class&#x3D;&quot;fas fa-shopping-cart&quot;&gt;&lt;/i&gt;
-        &lt;/a&gt;
   
-        &lt;!-- Notifications --&gt;
-        &lt;div class&#x3D;&quot;dropdown&quot;&gt;
-          &lt;a
-            class&#x3D;&quot;text-reset me-3 dropdown-toggle hidden-arrow&quot;
-            href&#x3D;&quot;#&quot;
-            id&#x3D;&quot;navbarDropdownMenuLink&quot;
-            role&#x3D;&quot;button&quot;
-            data-mdb-toggle&#x3D;&quot;dropdown&quot;
-            aria-expanded&#x3D;&quot;false&quot;
-          &gt;
-            &lt;i class&#x3D;&quot;fas fa-bell&quot;&gt;&lt;/i&gt;
-            &lt;span class&#x3D;&quot;badge rounded-pill badge-notification bg-danger&quot;&gt;1&lt;/span&gt;
-          &lt;/a&gt;
-          &lt;ul
-            class&#x3D;&quot;dropdown-menu dropdown-menu-end&quot;
-            aria-labelledby&#x3D;&quot;navbarDropdownMenuLink&quot;
-          &gt;
-            &lt;li&gt;
-              &lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Some news&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li&gt;
-              &lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Another news&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li&gt;
-              &lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Something else here&lt;/a&gt;
-            &lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
         &lt;!-- Avatar --&gt;
         &lt;div class&#x3D;&quot;dropdown&quot;&gt;
-          &lt;img
-          src&#x3D;&quot;https://mdbcdn.b-cdn.net/img/new/avatars/2.webp&quot;
-          class&#x3D;&quot;rounded-circle&quot;
-          height&#x3D;&quot;25&quot;
-          alt&#x3D;&quot;Black and White Portrait of a Man&quot;
-          loading&#x3D;&quot;lazy&quot;
-        /&gt;
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;todos&#x27;]&quot;&gt;
+            &lt;img
+            src&#x3D;&quot;https://mdbcdn.b-cdn.net/img/new/avatars/2.webp&quot;
+            class&#x3D;&quot;rounded-circle&quot;
+            height&#x3D;&quot;25&quot;
+            alt&#x3D;&quot;Black and White Portrait of a Man&quot;
+            loading&#x3D;&quot;lazy&quot;
+            data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;bottom&quot; title&#x3D;&quot;Home Page&quot;
+          /&gt;
+          &lt;/a&gt;
 
 
           &lt;!-- &lt;div class&#x3D;&quot;dropdown&quot;&gt;  --&gt;
-            &lt;button class&#x3D;&quot;btn btn-primary dropdown-toggle m-2&quot; id&#x3D;&quot;dropdownMenuButton1&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;dropdown&quot;&gt;Dropdown
-            &lt;span class&#x3D;&quot;caret&quot;&gt;&lt;/span&gt; &lt;/button&gt; 
-            &lt;ul class&#x3D;&quot;dropdown-menu&quot; aria-labelledby&#x3D;&quot;dropdownMenuButton1&quot;&gt;
-              &lt;li  (click)&#x3D;&quot;reloadPage()&quot;&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Log Out&lt;/a&gt;&lt;/li&gt;
-
-            &lt;/ul&gt;
-           &lt;!-- &lt;/div&gt;  --&gt;
-
-
+            &lt;button  class&#x3D;&quot;btn btn-primary  m-2&quot; id&#x3D;&quot;dropdownMenuButton1&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;dropdown&quot; (click)&#x3D;&quot;reloadPage()&quot;&gt;
+            &lt;span class&#x3D;&quot;caret&quot;&gt;Log Out&lt;/span&gt; &lt;/button&gt; 
 
         &lt;/div&gt;
 
       &lt;/div&gt;
 
-
-      &lt;!-- Right elements --&gt;
     &lt;/div&gt;
-    &lt;!-- Container wrapper --&gt;
   &lt;/nav&gt;
-  &lt;!-- Navbar --&gt;</code></pre>
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -539,8 +524,8 @@ userEmail: any &#x3D; this._service.email
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Navbar --><nav class="navbar  navbar-light bg-light">    <!-- Container wrapper -->    <div class="container-fluid">      <!-- Toggle button      <button        class="navbar-toggler"        type="button"        data-mdb-toggle="collapse"        data-mdb-target="#navbarSupportedContent"        aria-controls="navbarSupportedContent"        aria-expanded="false"        aria-label="Toggle navigation"      >        <i class="fas fa-bars"></i>      </button> -->        <!-- Collapsible wrapper -->      <div class="collapse navbar-collapse" id="navbarSupportedContent">        <!-- Left links -->        <ul class="navbar-nav me-auto mb-2 mb-lg-0">          <li class="nav-item">            <a class="nav-link" href="#">Hello {{userEmail}}</a>          </li>        </ul>      </div>      <div class="d-flex align-items-center ">        <div class="me-5">          <span>favorit</span>          <!-- <span>{{todoCount}}</span> -->                  </div>        <div class="me-5">          deleted        </div>        <div class="me-5">          completed        </div>      </div>        <!-- Right elements -->      <div class="d-flex align-items-center">        <!-- Icon -->        <a class="text-reset me-3" href="#">          <i class="fas fa-shopping-cart"></i>        </a>          <!-- Notifications -->        <div class="dropdown">          <a            class="text-reset me-3 dropdown-toggle hidden-arrow"            href="#"            id="navbarDropdownMenuLink"            role="button"            data-mdb-toggle="dropdown"            aria-expanded="false"          >            <i class="fas fa-bell"></i>            <span class="badge rounded-pill badge-notification bg-danger">1</span>          </a>          <ul            class="dropdown-menu dropdown-menu-end"            aria-labelledby="navbarDropdownMenuLink"          >            <li>              <a class="dropdown-item" href="#">Some news</a>            </li>            <li>              <a class="dropdown-item" href="#">Another news</a>            </li>            <li>              <a class="dropdown-item" href="#">Something else here</a>            </li>          </ul>        </div>        <!-- Avatar -->        <div class="dropdown">          <img          src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"          class="rounded-circle"          height="25"          alt="Black and White Portrait of a Man"          loading="lazy"        />          <!-- <div class="dropdown">  -->            <button class="btn btn-primary dropdown-toggle m-2" id="dropdownMenuButton1" type="button" data-bs-toggle="dropdown">Dropdown            <span class="caret"></span> </button>             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">              <li  (click)="reloadPage()"><a href="#">Log Out</a></li>            </ul>           <!-- </div>  -->        </div>      </div>      <!-- Right elements -->    </div>    <!-- Container wrapper -->  </nav>  <!-- Navbar --></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DeletedComponent', 'selector': 'app-deleted'},{'name': 'FavoriteComponent', 'selector': 'app-favorite'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'TodoComponent', 'selector': 'app-todo'}];
+        var COMPONENT_TEMPLATE = '<div><!-- Navbar --><nav class="navbar  navbar-light bg-light">    <!-- Container wrapper -->    <div class="container-fluid">        <!-- Collapsible wrapper -->      <div class="collapse navbar-collapse" id="navbarSupportedContent">        <!-- Left links -->        <ul class="navbar-nav me-auto mb-2 mb-lg-0">          <li class="nav-item">            <a class="nav-link" href="#">Hello {{userEmail}}</a>          </li>        </ul>      </div>      <div class="d-flex align-items-center ">        <div class="me-5">          <a [routerLink]="[\'favorite\']">            <i class="fa fa-star fa-xl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Favorite Todo\'s"  ></i>          </a>                            </div>        <div class="me-5">                    <a [routerLink]="[\'deleted\']">            <i class="fa fa-trash fa-xl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Deleted Todo\'s"></i>          </a>                  </div>        <div class="me-5">                    <a [routerLink]="[\'done\']">            <i class="fa fa-check fa-2xl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Completed Todo\'s"></i>          </a>                  </div>      </div>        <!-- Right elements -->      <div class="d-flex align-items-center">          <!-- Avatar -->        <div class="dropdown">          <a [routerLink]="[\'todos\']">            <img            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"            class="rounded-circle"            height="25"            alt="Black and White Portrait of a Man"            loading="lazy"            data-toggle="tooltip" data-placement="bottom" title="Home Page"          />          </a>          <!-- <div class="dropdown">  -->            <button  class="btn btn-primary  m-2" id="dropdownMenuButton1" type="button" data-bs-toggle="dropdown" (click)="reloadPage()">            <span class="caret">Log Out</span> </button>         </div>      </div>    </div>  </nav></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DeletedComponent', 'selector': 'app-deleted'},{'name': 'DoneComponent', 'selector': 'app-done'},{'name': 'FavoriteComponent', 'selector': 'app-favorite'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'TodoComponent', 'selector': 'app-todo'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NavbarComponent'};
 </script>
