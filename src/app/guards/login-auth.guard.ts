@@ -22,8 +22,14 @@ export class LoginAuthGuard implements CanActivate {
     this.loggedInSource.next(this.isLogged)
   }
 
+  logOut(){
+    this.isLogged = false
+    console.log(this.isLogged)
+  }
+
   areWeLoggedIn(){
     return this.isLogged
+    
   }
 
   youAreLoggedIn(){

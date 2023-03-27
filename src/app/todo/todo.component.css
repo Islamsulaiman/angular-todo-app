@@ -1,3 +1,10 @@
 .fineshed{
+    color: rgb(100, 158, 13);
     text-decoration: line-through;
+    
+}
+
+.starred{
+    
+    color: rgb(79, 216, 240);
 }

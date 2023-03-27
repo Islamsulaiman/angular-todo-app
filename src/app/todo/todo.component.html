@@ -15,10 +15,20 @@
         <tbody>
           <tr *ngFor="let todo of todos; let i =index">
             <th scope="row">{{i+1}}</th>
-            <td class="{{(todo.completed)?'fineshed':'' }}">{{todo.title}}</td>
-            <td style="color: green;"(click)="fineshed(i)">   check</td>
-            <td style="color: green;"(click)="addTodoToFav(i)">Favorit</td>
-            <td style="color: red;" (click)="remove(i)">x</td>
+            <td ><span class="{{(todo.completed)?'fineshed':'' }}">{{todo.title}}</span></td>
+            <td style="color: green;"(click)="fineshed(i)">
+                 <!-- check -->
+                 <i class="fa fa-check fa-2xl fa-flip" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Completed Todo's" style="--fa-animation-duration: 3s;"></i>
+                </td>
+            <td style="color: green;"(click)="addTodoToFav(i)">
+              <!-- Favorit -->
+              <i class="fa fa-star  fa-beat  {{(todo.favorite)?'starred':'' }}" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Favorite Todo's"  style="--fa-animation-duration: 2s;"></i>
+            
+            </td>
+            <td style="color: red;" (click)="remove(i)">
+              <!-- delete -->
+              <i class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Deleted Todo's"></i>
+            </td>
           </tr>
         </tbody>
         
