@@ -16,10 +16,7 @@ export class TodoComponent implements OnInit {
 
   inOrNot : Todo | undefined  ;
 
-  constructor( private _todoService: TodosService, private _login: LoginService, private _http:HttpService){
-    // this._todoService.allTodos = this.todos
-    // this.todos = this._todoService.allTodos
-  }
+  constructor( private _todoService: TodosService, private _login: LoginService, private _http:HttpService){}
 
   nums : number[] = [1,2,3,4]
 
@@ -90,16 +87,16 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  addToDeleted(id:number){
-    if(!this.todos[id].deleted ){
+  // addToDeleted(id:number){
+  //   if(!this.todos[id].deleted ){
 
-      // this.todosDeleted.push(this.todos[id])  //
-      this.todos[id].deleted = true
+  //     // this.todosDeleted.push(this.todos[id])  //
+  //     this.todos[id].deleted = true
 
-      this._todoService.todosDeleted.push(this.todos[id])
+  //     // this._todoService.todosDeleted.push(this.todos[id])
 
-    }
-  }
+  //   }
+  // }
 
   fineshed(id:number){
     
@@ -117,10 +114,18 @@ export class TodoComponent implements OnInit {
     }
   }
 
+
   remove(id:number){
-    if(this.todos[id].favorite) this._todoService.todosFav.splice(id,1) //remove favorite
-    this.addToDeleted(id)
-    this.todos.splice(id,1)
+    // if(this.todos[id].favorite) this._todoService.todosFav.splice(id,1) //remove favorite
+ 
+
+    this._todoService.todosDeleted.push(this.todos[id])
+    // this.todos.splice(id,1)
+    this._todoService.allTodos.splice(id,1)
+
+    // this.todos[id].deleted = true
+
+
   }
 
 

@@ -9,7 +9,8 @@ export class TodosService {
 
   allTodos: Todo []=[];
 
-
+  todosDeleted : Todo [] = []
+  deletedTodoCount: number = 0
 
 
 
@@ -18,11 +19,10 @@ export class TodosService {
   todoFavObj : any = {} //to link between todo id in todo comp and id in fav comp {"todoComp:FavComp"}
   favTodoCount: number = 0
 
-  todosDeleted : Todo [] = []
-  deletedTodoCount: number = 0
 
-  todosCompleted : Todo[] = []
-  completedTodoCount: number = 0
+
+  // todosCompleted : Todo[] = []
+  // completedTodoCount: number = 0
 
 
   constructor() {}
