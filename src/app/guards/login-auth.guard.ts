@@ -11,15 +11,12 @@ export class LoginAuthGuard implements CanActivate {
   
   constructor(private _router: Router){}
 
-
-  //create observable to check for created todo's
   private loggedInSource = new BehaviorSubject(this.isLogged);
   loggedIn = this.loggedInSource.asObservable();
 
   loggedInSwitch(){
     this.isLogged = true;
     console.log(this.isLogged)
-    // this.loggedInSource.next(this.isLogged)
   }
 
   logOut(){

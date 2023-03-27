@@ -18,14 +18,7 @@ type userType ={
 
 export class NavbarComponent implements OnInit {
 
-
-
-
-constructor(private _service: LoginService, private _authGuard: LoginAuthGuard, private loginGuard:LoginAuthGuard, private appComp: AppComponent){
-
-
-
-}
+constructor(private _service: LoginService, private _authGuard: LoginAuthGuard, private loginGuard:LoginAuthGuard, private appComp: AppComponent){}
 
 userEmail: any = this._service.email
 
@@ -34,10 +27,8 @@ userEmail: any = this._service.email
     this._service.pushUserData()
 
   }
-
   reloadPage(){
-    // this._authGuard.logOut()
-    // window.location.reload()
+
     this.appComp.logOut()
     this._authGuard.logOut()
     window.location.reload()

@@ -11,8 +11,6 @@ import { DoneComponent } from './done/done.component';
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
-  // {path: 'login',component:LoginComponent, canActivate:[LoginAuthGuard]},
-  // {path: '', component : LoginComponent, canActivate: [LoginAuthGuard]},
   {path: 'todos', component:TodoComponent, canActivate: [LoginAuthGuard]},
   {path: 'deleted',  component:  DeletedComponent, canActivate: [LoginAuthGuard]},
   {path: 'favorite',  component:  FavoriteComponent, canActivate: [LoginAuthGuard]},

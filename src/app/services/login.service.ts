@@ -37,9 +37,5 @@ export class LoginService {
     this.userDataSource.next(this.email)
   }
 
-
-
-  clgValues(){
-    // console.log(` email = ${this.email} , password = ${this.password}`)
-  }
+  clgValues(){}
 }

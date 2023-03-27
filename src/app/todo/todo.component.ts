@@ -33,11 +33,7 @@ export class TodoComponent implements OnInit {
   completedTodoCount: number = 0
 
 
-  ngOnInit(): void {
-    // console.log(this._todoService.allTodos)
-    // this.todos = this._todoService.allTodos
-  }
-
+  ngOnInit(): void {}
 
   name : String |undefined|null = this._login.email
 
@@ -53,8 +49,6 @@ export class TodoComponent implements OnInit {
       todo.completed = false;
       todo.favorite = false;
       todo.deleted = false
-
-
 
       this.newTodo = "";  //
 
@@ -87,16 +81,6 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  // addToDeleted(id:number){
-  //   if(!this.todos[id].deleted ){
-
-  //     // this.todosDeleted.push(this.todos[id])  //
-  //     this.todos[id].deleted = true
-
-  //     // this._todoService.todosDeleted.push(this.todos[id])
-
-  //   }
-  // }
 
   fineshed(id:number){
     
@@ -116,27 +100,16 @@ export class TodoComponent implements OnInit {
 
 
   remove(id:number){
-    // if(this.todos[id].favorite) this._todoService.todosFav.splice(id,1) //remove favorite
- 
 
     this._todoService.todosDeleted.push(this.todos[id])
-    // this.todos.splice(id,1)
     this._todoService.allTodos.splice(id,1)
 
-    // this.todos[id].deleted = true
-
-
   }
-
-
-
 
   // utilities
   todoCountFunc(){
     this.todoCount = this.todos.length-1
   }
-
-
 
 }
 
